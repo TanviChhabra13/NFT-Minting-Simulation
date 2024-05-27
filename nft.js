@@ -25,11 +25,11 @@ function listNFTs()
     for (let i = 0; i < nftCollection.length; i++) 
     {
         const nft = nftCollection[i];
-        console.log(`ID:          ${nft.id}`);
-        console.log(`Book Name:   ${nft.metadata.book_name}`);
-        console.log(`Author:      ${nft.metadata.author}`);
-        console.log(`Description: ${nft.metadata.description}`);
-        console.log(`Link to buy: ${nft.metadata.link}`);
+        console.log('ID:          ' + nft.id);
+        console.log('Book Name:   ' + nft.metadata.book_name);
+        console.log('Author:      ' + nft.metadata.author);
+        console.log('Description: ' + nft.metadata.description);
+        console.log('Link to buy: ' + nft.metadata.link);
         console.log('                                                            ');
     }
 }
@@ -39,8 +39,6 @@ function getTotalSupply()
 {
     return nftCollection.length;
 }
-
-// Call your functions below this line
 
 // Minting some NFTs
 mintNFT('How to be Happy', 'Ruskin Bond', 'This is a book that carries decades of experience on how to be contented.', 'https://amzn.in/d/aNF9qRZ');
