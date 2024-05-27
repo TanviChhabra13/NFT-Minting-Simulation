@@ -1,11 +1,14 @@
-// Step 1: Create a variable to hold a number of NFTs
+// Step 1: Create a variable to hold your NFTs
 let nftCollection = [];
 
-// Step 2: Create the mintNFT function
-function mintNFT(book_name, author, description, link) {
-    const newNFT = {
+// Step 2: This function will take in some values as parameters, create an NFT object using the parameters passed to it for its metadata, and store it in the variable above.
+function mintNFT(book_name, author, description, link) 
+{
+    const newNFT = 
+    {
         id: 'NFT-' + (nftCollection.length + 1),
-        metadata: {
+        metadata: 
+        {
             book_name: book_name,
             author: author,
             description: description,
@@ -15,23 +18,29 @@ function mintNFT(book_name, author, description, link) {
     nftCollection.push(newNFT);
 }
 
-// Step 3: Create the listNFTs function
-function listNFTs() {
+// Step 3: Create a "loop" that will go through an "array" of NFTs and print their metadata with console.log()
+function listNFTs() 
+{
     console.log('Current NFT Collection:');
-    nftCollection.forEach(nft => {
-        console.log(`ID: ${nft.id}`);
-        console.log(`Book Name: ${nft.metadata.book_name}`);
-        console.log(`Author: ${nft.metadata.author}`);
+    for (let i = 0; i < nftCollection.length; i++) 
+    {
+        const nft = nftCollection[i];
+        console.log(`ID:          ${nft.id}`);
+        console.log(`Book Name:   ${nft.metadata.book_name}`);
+        console.log(`Author:      ${nft.metadata.author}`);
         console.log(`Description: ${nft.metadata.description}`);
         console.log(`Link to buy: ${nft.metadata.link}`);
-        console.log('--------------------------');
-    });
+        console.log('                                                            ');
+    }
 }
 
-// Step 4: Create the getTotalSupply function
-function getTotalSupply() {
+// Step 4: Print the total number of NFTs we have minted to the console
+function getTotalSupply() 
+{
     return nftCollection.length;
 }
+
+// Call your functions below this line
 
 // Minting some NFTs
 mintNFT('How to be Happy', 'Ruskin Bond', 'This is a book that carries decades of experience on how to be contented.', 'https://amzn.in/d/aNF9qRZ');
@@ -42,5 +51,5 @@ mintNFT('THINK AND GROW RICH', 'Napoleon Hill', 'The method by which DESIRE for 
 // Listing all NFTs
 listNFTs();
 
-// Getting the total supply of NFTs
+// Printing the total number of NFTs minted
 console.log('Total NFTs Minted: ' + getTotalSupply());
